@@ -1,0 +1,18 @@
+enum Permission {
+  VISITOR
+  USER 
+  ADMIN
+  REZCREATE
+  REZDELETE
+  REZUPDATE
+  REZCONFIRM
+}
+
+type User {
+  id: ID! @unique
+  name: String
+  phone: String
+  email: String! @unique
+  password: String!
+  permission: [Permission]!
+}
